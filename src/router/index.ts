@@ -4,6 +4,10 @@ import {
 	createWebHashHistory,
 } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import settings from '@/settings'
+import { useUserStoreHook } from '@/stores/user'
+
+const user = useUserStoreHook()
 
 const router = createRouter({
 	// history: createWebHistory(import.meta.env.BASE_URL),
@@ -25,6 +29,18 @@ const router = createRouter({
 			component: () => import('../views/details.vue'),
 		},
 	],
+})
+
+let hasGetInfo = false
+
+router.beforeEach(async (to, from, next) => {
+	document.title = settings.title || '游戏页面'
+
+	if (!hasGetInfo && to.name !== 'home') {
+		await user.getData()
+		hasGetInfo = true
+	}
+	next()
 })
 
 export default router

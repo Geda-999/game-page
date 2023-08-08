@@ -1,40 +1,33 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
 
-import list from './list'
+import { useUserStoreHook } from '@/stores/user'
 
 defineOptions({
 	name: 'AboutView',
 })
 
 const router = useRouter()
+const user = useUserStoreHook()
 
-interface ListItf {
-	name: string
-	decs: string
-	logo: string
-	hold_img: string[]
-	down_url: string
-}
-
-const handleClick = (item: ListItf, index: number) => {
-	router.push({ path: '/details', query: { data: JSON.stringify(item) } })
+const handleClick = (id: number) => {
+	router.push({ path: '/details', query: { id } })
 }
 </script>
 
 <template>
 	<div style="width: 80%; margin: auto">
 		<div style="height: 100px"></div>
-		<h2>名称</h2>
+		<h2>游戏类型</h2>
 		<hr />
 		<div style="display: flex; flex-wrap: wrap">
 			<div
 				class="item"
-				v-for="(item, index) in list"
+				v-for="(item, index) in user.list"
 				:key="index"
-				@click="handleClick(item, index)"
+				@click="handleClick(item.id)"
 			>
-				<img :src="item.logo" alt="" />
+				<img :src="item.logo_img" alt="" />
 				<p>{{ item.name }}</p>
 			</div>
 		</div>

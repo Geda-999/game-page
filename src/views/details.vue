@@ -1,19 +1,21 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
 import { ref } from 'vue'
+import { useUserStoreHook } from '@/stores/user'
 
 defineOptions({
 	name: 'Details',
 })
 
 const route = useRoute()
-const item = ref<any>()
+const user = useUserStoreHook()
+const item = ref()
 
 if (route.query) {
-	item.value = JSON.parse(route.query.data as any)
+	item.value = user.comp(route.query.id)
 }
 
-const downloadFile = (urls: string) => {
+const downloadFile = urls => {
 	const u = urls.split('/')
 
 	// const data = '这是要下载的文件内容'
@@ -36,30 +38,36 @@ const downloadFile = (urls: string) => {
 	<div style="width: 80%; margin: auto">
 		<div style="height: 100px"></div>
 		<div>
-			<h1>名称</h1>
+			<h2>详情列表</h2>
 
 			<div style="display: flex; align-items: center">
 				<img
-					src="https://dummyimage.com/100x100"
+					:src="item?.logo_img"
 					alt=""
-					style="border-radius: 8px"
+					style="border-radius: 8px; width: 80px; height: 80px"
 				/>
 				<div style="margin-left: 10px">
-					<h3>{{ item.name }}</h3>
-					<div>{{ item.decs }}</div>
+					<h3>{{ item?.name }}</h3>
+					<div>{{ item?.text }}</div>
 				</div>
-				<div class="button_down" @click="downloadFile(item.down_url)">下载</div>
+				<div class="button_down" @click="downloadFile(item?.down_url)">
+					下载
+				</div>
 			</div>
 		</div>
+
+		<p style="color: #dd7545; font-size: 14px; padding: 10px 0">
+			{{ item?.description }}
+		</p>
 
 		<section style="margin-top: 20px">
 			<div class="item_img">
 				<img
-					v-for="(items, idx) in item.hold_img"
+					v-for="(items, idx) in item?.hold_img"
 					:key="idx"
 					:src="items"
 					alt=""
-					style="margin: 4px 0"
+					style="margin: 4px 0; width: 100%"
 				/>
 			</div>
 		</section>

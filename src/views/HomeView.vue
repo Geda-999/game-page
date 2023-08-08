@@ -15,7 +15,7 @@ defineOptions({
 		:style="{ 'background-image': 'url(' + settings.backgroundImg + ' )' }"
 	>
 		<div class="home_logo">
-			<img :src="settings.app_icon" alt="" />
+			<!-- <img :src="settings.app_icon" alt="" /> -->
 		</div>
 		<div class="home_join">
 			<button @click="router.push('/about')">进入</button>
@@ -29,10 +29,11 @@ defineOptions({
 	top: 0;
 	right: 0;
 	bottom: 0;
-	/* background: #258058; */
+	/* background: #ffe800; */
 	height: 100vh;
 	background-position: center center;
 	background-repeat: no-repeat;
+	background-size: cover;
 
 	&_logo {
 		position: absolute;
