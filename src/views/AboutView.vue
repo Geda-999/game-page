@@ -17,8 +17,7 @@ const handleClick = (id: number) => {
 
 <template>
 	<div style="width: 80%; margin: auto">
-		<div style="height: 100px"></div>
-		<h2>游戏类型</h2>
+		<h2>🎃游戏类型</h2>
 		<hr />
 		<div style="display: flex; flex-wrap: wrap">
 			<div
@@ -44,8 +43,11 @@ const handleClick = (id: number) => {
 	margin: 8px;
 	min-width: 200px;
 	cursor: pointer;
+	transition: 0.4s;
 
 	&:hover {
+		transform: scale(1.1);
+		transform: translate(0px, -8px);
 		border: 1px solid #efe3e3;
 		box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.04),
 			0px 0px 80px rgba(0, 0, 0, 0.1);

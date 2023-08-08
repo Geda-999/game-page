@@ -3,7 +3,6 @@ import {
 	createWebHistory,
 	createWebHashHistory,
 } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 import settings from '@/settings'
 import { useUserStoreHook } from '@/stores/user'
 
@@ -16,7 +15,7 @@ const router = createRouter({
 		{
 			path: '/',
 			name: 'home',
-			component: HomeView,
+			component: () => import('../views/HomeView.vue'),
 		},
 		{
 			path: '/about',

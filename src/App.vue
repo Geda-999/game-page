@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import FHeader from '../src/layout/FHeader.vue'
+import FHeader from '@/layout/FHeader.vue'
 </script>
 
 <template>
@@ -15,6 +15,12 @@ import FHeader from '../src/layout/FHeader.vue'
 </template>
 
 <style lang="scss">
+.body,
+html {
+	background: #140e38 !important;
+	color: #fff !important;
+}
+
 // 进入之前
 .fade-enter-from {
 	opacity: 0;
