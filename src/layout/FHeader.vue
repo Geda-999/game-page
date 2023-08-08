@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
-import settings from '../settings'
+// import settings from '../settings'
 defineOptions({
 	name: 'FHeader',
 })
@@ -10,7 +10,12 @@ const router = useRouter()
 
 <template>
 	<div class="f-header">
-		<img @click="router.push('/')" :src="settings.logo" alt="" class="logo" />
+		<img
+			@click="router.push('/')"
+			src="../assets/logo-white.jpg"
+			alt=""
+			class="logo"
+		/>
 	</div>
 </template>
 

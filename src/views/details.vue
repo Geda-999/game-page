@@ -10,8 +10,6 @@ defineOptions({
 const route = useRoute()
 const user = useUserStoreHook()
 const item = ref()
-const btn_icon =
-	'	https://demosc.chinaz.net/Files/DownLoad/moban/202111/moban5872/static/picture/arrrow-icon.jpg'
 
 if (route.query) {
 	item.value = user.comp(route.query.id)
@@ -54,7 +52,7 @@ const downloadFile = (urls: string) => {
 				<div class="button_down" @click=""></div>
 				<div class="btn-link" @click="downloadFile(item?.down_url)">
 					点击下载
-					<img :src="btn_icon" alt="" />
+					<img src="../assets/arrrow-icon.jpg" alt="" />
 				</div>
 			</div>
 		</div>
@@ -99,7 +97,8 @@ const downloadFile = (urls: string) => {
 	height: 50px;
 	line-height: 50px;
 	/* padding: 0 15px; */
-	background: url(https://demosc.chinaz.net/Files/DownLoad/moban/202111/moban5872/static/image/btn-bg.jpg);
+	// background: url(https://demosc.chinaz.net/Files/DownLoad/moban/202111/moban5872/static/image/btn-bg.jpg);
+	background: url(../assets/btn-bg.jpg);
 	background-repeat: no-repeat;
 	background-attachment: scroll;
 	background-position: center center;

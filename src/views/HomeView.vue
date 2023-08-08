@@ -6,13 +6,6 @@ defineOptions({
 })
 
 const router = useRouter()
-
-const imgList = {
-	cover:
-		'https://demosc.chinaz.net/Files/DownLoad/moban/202111/moban5872/static/picture/hero-position-img.jpg',
-	btn_icon:
-		'	https://demosc.chinaz.net/Files/DownLoad/moban/202111/moban5872/static/picture/arrrow-icon.jpg',
-}
 </script>
 
 <template>
@@ -30,13 +23,13 @@ const imgList = {
 				<small>Simply text of the printing and typesetting industry.</small>
 				<div class="btn-link" @click="router.push('/about')">
 					点击进入
-					<img :src="imgList.btn_icon" alt="" />
+					<img src="../assets/arrrow-icon.jpg" alt="" />
 				</div>
 			</div>
 
 			<div style="position: absolute; bottom: 0; right: 0">
 				<img
-					:src="imgList.cover"
+					src="../assets/hero-position-img.jpg"
 					alt=""
 					style="width: 600px; padding: 0 30px"
 				/>
@@ -67,8 +60,9 @@ small {
 	line-height: 73px;
 	height: 73px;
 	width: 230px;
-	/* padding: 0 15px; */
-	background: url(https://demosc.chinaz.net/Files/DownLoad/moban/202111/moban5872/static/image/btn-bg.jpg);
+	// padding: 0 15px;
+	// background: url(https://demosc.chinaz.net/Files/DownLoad/moban/202111/moban5872/static/image/btn-bg.jpg);
+	background: url(../assets/btn-bg.jpg);
 	background-repeat: no-repeat;
 	background-attachment: scroll;
 	background-position: center center;
