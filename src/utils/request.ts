@@ -31,24 +31,12 @@ service.interceptors.response.use(
 		return response.data
 	},
 	error => {
-		// const msg = error.response.data.msg || '请求失败'
+		
+		const err = error.response.data.apifoxError
+		if (err.code !== 200) {
+			alert('报错啦！' + err.message)
+		}
 
-		// // 实现点击刷新方法
-		// const handleRefresh = () => location.reload()
-
-		// if (msg == '非法token，请先登录！') {
-		// 	// 调用pinia
-		// 	useMainStore().logout()
-
-		// 	handleRefresh()
-
-		// 	// store.dispatch("logout").finally(()=>location.reload())
-		// }
-
-		// toast(msg, 'error')
-
-		// // 隐藏顶部加载进度条方法
-		// hideFullLoading()
 		return Promise.reject(error)
 	}
 )

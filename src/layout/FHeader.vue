@@ -21,7 +21,7 @@ const router = useRouter()
 
 <style lang="scss" scoped>
 .f-header {
-	width: 100%;
+	// width: 100%;
 	display: flex;
 	align-items: center;
 	padding: 20px;

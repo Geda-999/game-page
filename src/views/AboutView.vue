@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
-
 import { useUserStoreHook } from '@/stores/user'
+import { imgUrl } from '@/utils'
 
 defineOptions({
 	name: 'AboutView',
@@ -26,10 +26,11 @@ const handleClick = (id: number) => {
 				:key="index"
 				@click="handleClick(item.id)"
 			>
-				<img :src="item.logo_img" alt="" />
+				<img :src="imgUrl(item.logo_img)" alt="" />
 				<p>{{ item.name }}</p>
 			</div>
 		</div>
+		<div style="height: 100px"></div>
 	</div>
 </template>
 

@@ -20,7 +20,8 @@ const router = useRouter()
 				"
 			>
 				<h1>BEST GAME PLAYING TODAY.</h1>
-				<small>Simply text of the printing and typesetting industry.</small>
+				<!-- <small>Simply text of the printing and typesetting industry.</small> -->
+				<small>Getting addicted to games harms the body. Arrange your time sensibly and enjoy a healthy life.</small>
 				<div class="btn-link" @click="router.push('/about')">
 					点击进入
 					<img src="../assets/arrrow-icon.jpg" alt="" />
@@ -51,7 +52,7 @@ h1 {
 	width: 50%;
 }
 small {
-	font-size: 25px;
+	font-size: 16px;
 	font-weight: 600;
 	margin-bottom: 47px;
 }
@@ -84,8 +85,7 @@ small {
 	&:hover {
 		font-size: 30px;
 		color: rgba(216, 229, 255, 0.874);
-		box-shadow: 2.4px 2.6px 10px rgba(99, 152, 203, 0.255),
-			19px 21px 80px rgba(41, 89, 161, 0.51);
+		box-shadow: 0px 22px 80px rgba(41, 89, 161, 0.51);
 	}
 }
 </style>
