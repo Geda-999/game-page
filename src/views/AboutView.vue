@@ -22,8 +22,8 @@ const handleClick = (id: number) => {
 		<div style="display: flex; flex-wrap: wrap">
 			<div
 				class="item"
-				v-for="(item, index) in user.list"
-				:key="index"
+				v-for="item in user.list"
+				:key="item.id"
 				@click="handleClick(item.id)"
 			>
 				<img :src="imgUrl(item.logo_img)" alt="" />

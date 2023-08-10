@@ -9,19 +9,25 @@ const router = useRouter()
 </script>
 
 <template>
-	<div style="height: 70vh; position: relative">
+	<div style="height: 70vh; position: relative; margin-top: 20px">
 		<div style="">
 			<div
 				style="
-					position: relative;
+					position: absolute;
 					z-index: 100;
 					padding: 0 20px;
 					margin-left: 80px;
+					top: 50%;
+					left: 0;
+					transform: translate(0, -50%);
 				"
 			>
 				<h1>BEST GAME PLAYING TODAY.</h1>
 				<!-- <small>Simply text of the printing and typesetting industry.</small> -->
-				<small>Getting addicted to games harms the body. Arrange your time sensibly and enjoy a healthy life.</small>
+				<small
+					>Getting addicted to games harms the body. Arrange your time sensibly
+					and enjoy a healthy life.</small
+				>
 				<div class="btn-link" @click="router.push('/about')">
 					点击进入
 					<img src="../assets/arrrow-icon.jpg" alt="" />
@@ -49,7 +55,8 @@ h1 {
 	text-shadow: 3px 3px 0px #b154f0;
 	font-size: 94px;
 	line-height: 90px;
-	width: 50%;
+	// width: 50%;
+	width: 70%;
 }
 small {
 	font-size: 16px;

@@ -3,7 +3,7 @@ export interface hidListItf {
 }
 
 const list: hidListItf = {
-	title: '准和取历名',
+	title: 'seacity',
 }
 
 export default list

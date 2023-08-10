@@ -1,16 +1,23 @@
 <script setup lang="ts">
 import FHeader from '@/layout/FHeader.vue'
+import FFooter from '@/layout/FFooter.vue'
 </script>
 
 <template>
 	<div>
-		<FHeader style="" />
+		<FHeader />
 
-		<router-view v-slot="{ Component }">
-			<transition name="fade">
-				<component :is="Component"></component>
-			</transition>
-		</router-view>
+		<div style="min-height: calc(100vh - 200px)">
+			<router-view v-slot="{ Component }">
+				<transition name="fade">
+					<keep-alive>
+						<component :is="Component"></component>
+					</keep-alive>
+				</transition>
+			</router-view>
+		</div>
+
+		<FFooter />
 	</div>
 </template>
 

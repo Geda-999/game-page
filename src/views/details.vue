@@ -41,7 +41,7 @@ const downloadFile = (urls: string) => {
 					/>
 					<div style="margin-left: 10px">
 						<h3>{{ item?.name }}</h3>
-						<div>{{ item?.text }}</div>
+						<small>{{ item?.text }}</small>
 					</div>
 					<div class="btn-link" @click="downloadFile(item?.down_url)">
 						点击下载
@@ -50,11 +50,12 @@ const downloadFile = (urls: string) => {
 				</div>
 			</div>
 
-			<p
-				style="color: #c27bf2; font-size: 14px; padding: 10px 0"
-				v-if="item?.description"
-			>
-				{{ item?.description }}
+			<p style="color: #c27bf2; font-size: 14px; padding: 10px 0">
+				{{
+					item?.name
+				}}是一款最新上线的棋牌游戏,本作内嵌了高品质的防作弊系统,更有超多福利活动,玩家再也不必为金币烦恼,喜欢的小伙伴们快来下载{{
+					item?.name
+				}}游戏试试吧
 			</p>
 
 			<div class="item_img" style="margin-top: 20px">
